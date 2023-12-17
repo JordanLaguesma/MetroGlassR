@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Cashiers extends Migration
+class Customers extends Migration
 {
     public function up()
     {
@@ -15,18 +15,13 @@ class Cashiers extends Migration
                 'unsigned' => true,
                 'auto_increment' => true
             ],
-            'user_id' => [
-                'type' => 'INT',
-                'constraint' => 11,
-                'unsigned' => true
-            ],
             'firstname' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255
             ],
             'lastname' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255  
+                'constraint' => 255
             ],
             'email' => [
                 'type' => 'VARCHAR',
@@ -39,18 +34,40 @@ class Cashiers extends Migration
             'address' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255
+            ],            
+            'icon' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255
+            ],
+            'username' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255
+            ],
+            'gender' => [
+                'type' => 'INT',
+                'constraint' => 1
+            ],
+            'birthdate' => [
+                'type' => 'DATE'
+            ],
+            'password' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255
             ],
             'created_at' => [
                 'type' => 'DATETIME'
+            ],
+            'status' => [
+                'type' => 'INT',
+                'constraint' => 1
             ]
         ]);
 
         $this->forge->addPrimaryKey('id');
-        $this->forge->addForeignKey('user_id', 'users', 'id');
-        $this->forge->createTable('cashiers');
+        $this->forge->createTable('customers');
     }
     public function down()
     {
-        $this->forge->dropTable('cashiers');
+        $this->forge->dropTable('customers');
     }
 }
