@@ -25,6 +25,9 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
+        'auth_customer' => \App\Filters\AuthCustomer::class,
+        'auth_user'     => \App\Filters\AuthUser::class,
+
     ];
 
     /**
