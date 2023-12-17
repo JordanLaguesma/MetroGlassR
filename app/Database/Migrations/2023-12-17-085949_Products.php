@@ -25,7 +25,8 @@ class Products extends Migration
             ],
             'category_id' => [
                 'type' => 'INT',
-                'constraint' => 2
+                'constraint' => 11,
+                'unsigned' => true
             ],
             'size' => [
                 'type' => 'VARCHAR',
